@@ -7,6 +7,32 @@ function Contact() {
       <div className="section-header">
         <span className="section-title">Contact Me</span>
       </div>
+      <div className={`contact-container ${isVisible ? "visible" : ""}`}>
+        <div className="contact-info">
+          <h3>Get In Touch</h3>
+          <p>
+            I'm currently looking for new opportunities. Whether you have a
+            question or just want to say hi, I'll try my best to get back to
+            you!
+          </p>
+
+          <div className="social-links">
+            {socialLinks.map((link, index) => (
+              <a
+                key={link.name}
+                href={link.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="social-link"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                <i className={link.icon}></i>
+                <span>{link.name}</span>
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
     </section>
   );
 }
