@@ -2,6 +2,30 @@ import { useState } from "react";
 import "./Contact.css";
 
 function Contact() {
+  const [isVisible, setIsVisible] = useState(false);
+
+  const socialLinks = [
+    {
+      name: "GitHub",
+      icon: "fab fa-github",
+      url: "https://github.com/matiasagado",
+    },
+    {
+      name: "LinkedIn",
+      icon: "fab fa-linkedin",
+      url: "https://linkedin.com/in/matiasagado",
+    },
+    {
+      name: "Twitter",
+      icon: "fab fa-twitter",
+      url: "https://twitter.com/",
+    },
+    {
+      name: "Email",
+      icon: "fas fa-envelope",
+      url: "mailto:mfagado@usfca.edu",
+    },
+  ];
   return (
     <section className="section" id="contact">
       <div className="section-header">
