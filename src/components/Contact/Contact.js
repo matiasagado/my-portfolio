@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import "./Contact.css";
 
 function Contact() {
@@ -8,6 +8,7 @@ function Contact() {
     message: "",
   });
 
+  const contactRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
 
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -17,6 +18,28 @@ function Contact() {
   const handleChange = (e) => {};
 
   const handleSubmit = (e) => {};
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.2 }
+    );
+
+    if (contactRef.current) {
+      observer.observe(contactRef.current);
+    }
+
+    return () => {
+      if (contactRef.current) {
+        observer.disconnect();
+      }
+    };
+  }, []);
 
   const socialLinks = [
     {
@@ -41,7 +64,7 @@ function Contact() {
     },
   ];
   return (
-    <section className="section" id="contact">
+    <section className="section" id="contact" ref={contactRef}>
       <div className="section-header">
         <span className="section-title">Contact Me</span>
       </div>
