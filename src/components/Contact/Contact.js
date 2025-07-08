@@ -3,6 +3,9 @@ import "./Contact.css";
 
 function Contact() {
   const [isVisible, setIsVisible] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const handleSubmit = (e) => {};
 
   const socialLinks = [
     {
@@ -57,14 +60,18 @@ function Contact() {
           </div>
         </div>
         <div className="contact-form-container">
-          {isSubmitted ? (            <div className="form-success">
+          {isSubmitted ? (
+            <div className="form-success">
               <i className="fas fa-check-circle"></i>
               <h3>Thank you!</h3>
               <p>
                 Your message has been sent successfully. I'll get back to you
                 soon!
               </p>
-            </div>) : ()}
+            </div>
+          ) : (
+            <form className="contact-form" onSubmit={handleSubmit}></form>
+          )}
         </div>
       </div>
     </section>
