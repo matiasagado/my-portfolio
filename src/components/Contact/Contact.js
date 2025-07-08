@@ -4,6 +4,7 @@ import "./Contact.css";
 function Contact() {
   const [isVisible, setIsVisible] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [formError, setFormError] = useState("");
 
   const handleSubmit = (e) => {};
 
@@ -70,7 +71,9 @@ function Contact() {
               </p>
             </div>
           ) : (
-            <form className="contact-form" onSubmit={handleSubmit}></form>
+            <form className="contact-form" onSubmit={handleSubmit}>
+              {formError && <div className="form-error">{formError}</div>}
+            </form>
           )}
         </div>
       </div>
