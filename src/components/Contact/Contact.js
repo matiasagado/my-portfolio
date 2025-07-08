@@ -56,6 +56,16 @@ function Contact() {
             ))}
           </div>
         </div>
+        <div className="contact-form-container">
+          {isSubmitted ? (            <div className="form-success">
+              <i className="fas fa-check-circle"></i>
+              <h3>Thank you!</h3>
+              <p>
+                Your message has been sent successfully. I'll get back to you
+                soon!
+              </p>
+            </div>) : ()}
+        </div>
       </div>
     </section>
   );
