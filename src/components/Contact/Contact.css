@@ -175,3 +175,47 @@
   transform: none;
   box-shadow: none;
 }
+
+.form-error {
+  padding: 0.75rem;
+  background-color: rgba(239, 68, 68, 0.1);
+  border-left: 3px solid #ef4444;
+  color: #ef4444;
+  border-radius: 0.25rem;
+  margin-bottom: 1rem;
+}
+
+.form-success {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100%;
+  animation: fadeIn 0.5s ease;
+}
+
+.form-success i {
+  font-size: 3rem;
+  color: #10b981;
+  margin-bottom: 1rem;
+}
+
+.form-success h3 {
+  font-size: 1.5rem;
+  color: #e2e8f0;
+  margin-bottom: 0.5rem;
+}
+
+.form-success p {
+  color: #94a3b8;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
