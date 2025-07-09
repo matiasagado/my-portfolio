@@ -219,3 +219,33 @@
     opacity: 1;
   }
 }
+@media (max-width: 768px) {
+  .contact-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .contact-info {
+    order: 2;
+  }
+
+  .contact-form-container {
+    order: 1;
+  }
+
+  .social-links {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .social-link {
+    flex: 1 0 40%;
+  }
+}
+
+@media (max-width: 480px) {
+  .social-link {
+    flex: 1 0 100%;
+  }
+}
