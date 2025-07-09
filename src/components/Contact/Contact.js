@@ -23,8 +23,39 @@ function Contact() {
     }));
   };
 
-  const handleSubmit = (e) => {};
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
 
+    if (!formData.name || !formData.email || !formData.message) {
+      setFormError("Please fill in all fields");
+      setIsSubmitting(false);
+      return;
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      setFormError("Please enter a valid email address");
+      setIsSubmitting(false);
+      return;
+    }
+
+    setTimeout(() => {
+      setIsSubmitting(false);
+      setIsSubmitted(true);
+      setFormError("");
+
+      setFormData({
+        name: "",
+        email: "",
+        message: "",
+      });
+
+      setTimeout(() => {
+        setIsSubmitted(false);
+      }, 5000);
+    }, 1500);
+  };
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
