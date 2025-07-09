@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./Projects.css";
+import ProjectCard from "./ProjectCard";
 
 function Projects() {
   return (
