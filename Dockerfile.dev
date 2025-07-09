@@ -11,6 +11,8 @@ COPY package*.json ./
 
 # Install dependencies
 RUN npm install
+# Install EmailJS package
+RUN npm install @emailjs/browser
 
 # Copy the rest of the application
 # (This will be overridden by volumes during development)

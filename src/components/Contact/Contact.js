@@ -41,14 +41,12 @@ function Contact() {
       return;
     }
 
-    // Prepare template parameters
     const templateParams = {
       name: formData.name,
       email: formData.email,
       message: formData.message,
     };
 
-    // Send email using EmailJS with public key parameter (without prefixes)
     emailjs
       .send(
         "service_sgoc9yi",
@@ -62,14 +60,12 @@ function Contact() {
         setIsSubmitted(true);
         setFormError("");
 
-        // Reset form
         setFormData({
           name: "",
           email: "",
           message: "",
         });
 
-        // Hide success message after 5 seconds
         setTimeout(() => {
           setIsSubmitted(false);
         }, 5000);
@@ -81,13 +77,10 @@ function Contact() {
       });
   };
 
-  // Initialize EmailJS
   useEffect(() => {
-    // Initialize with your User ID (without 'user_' prefix)
     emailjs.init("lo22WP_hInU4a6cBc");
   }, []);
 
-  // Animation observer effect
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -99,12 +92,13 @@ function Contact() {
       { threshold: 0.2 }
     );
 
-    if (contactRef.current) {
-      observer.observe(contactRef.current);
+    const currentRef = contactRef.current;
+    if (currentRef) {
+      observer.observe(currentRef);
     }
 
     return () => {
-      if (contactRef.current) {
+      if (currentRef) {
         observer.disconnect();
       }
     };
