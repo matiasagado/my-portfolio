@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import "./Contact.css";
+import emailjs from "@emailjs/browser";
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -40,22 +41,53 @@ function Contact() {
       return;
     }
 
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setIsSubmitted(true);
-      setFormError("");
+    // Prepare template parameters
+    const templateParams = {
+      name: formData.name,
+      email: formData.email,
+      message: formData.message,
+    };
 
-      setFormData({
-        name: "",
-        email: "",
-        message: "",
+    // Send email using EmailJS with public key parameter (without prefixes)
+    emailjs
+      .send(
+        "service_sgoc9yi",
+        "template_3dfd26v",
+        templateParams,
+        "lo22WP_hInU4a6cBc"
+      )
+      .then((response) => {
+        console.log("SUCCESS!", response.status, response.text);
+        setIsSubmitting(false);
+        setIsSubmitted(true);
+        setFormError("");
+
+        // Reset form
+        setFormData({
+          name: "",
+          email: "",
+          message: "",
+        });
+
+        // Hide success message after 5 seconds
+        setTimeout(() => {
+          setIsSubmitted(false);
+        }, 5000);
+      })
+      .catch((err) => {
+        console.error("FAILED...", err);
+        setFormError("Failed to send message. Please try again later.");
+        setIsSubmitting(false);
       });
-
-      setTimeout(() => {
-        setIsSubmitted(false);
-      }, 5000);
-    }, 1500);
   };
+
+  // Initialize EmailJS
+  useEffect(() => {
+    // Initialize with your User ID (without 'user_' prefix)
+    emailjs.init("lo22WP_hInU4a6cBc");
+  }, []);
+
+  // Animation observer effect
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {

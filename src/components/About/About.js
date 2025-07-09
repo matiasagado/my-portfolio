@@ -22,9 +22,9 @@ function About() {
   const tech_stack = [
     "React.js",
     "JavaScript",
-    "Java",
+    "C",
     "Python",
-    "MongoDB",
+    "SQLite",
     "HTML/CSS",
   ];
 
