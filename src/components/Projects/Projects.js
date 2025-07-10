@@ -31,8 +31,8 @@ function Projects() {
       <div className="section-header">
         <span className="section-title">Pet Projects</span>
       </div>
-      <div className="project-container">
-        <div className="project-grid">
+      <div className="projects-container">
+        <div className="projects-grid">
           {visibleProjects.map((project, index) => (
             <div
               key={project.id}
