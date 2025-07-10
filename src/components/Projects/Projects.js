@@ -10,7 +10,7 @@ function Projects() {
       description:
         "A responsive portfolio website built with React and CSS animations to showcase my projects and skills.",
       technologies: ["React", "CSS", "JavaScript", "Docker"],
-      image: "#",
+      image: "/assets/project1.jpeg",
       liveLink: "#",
       codeLink: "https://github.com/matiasagado/my-portfolio",
     },
