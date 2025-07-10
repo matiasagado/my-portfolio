@@ -3,7 +3,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 1.5rem 2rem;
-  background-color: #0f172a;
+  background-color: var(--background);
   position: fixed;
   top: 0;
   left: 0;
@@ -97,7 +97,7 @@
   height: 2px;
   bottom: -4px;
   left: 0;
-  background-color: #8b5cf6;
+  background-color: var(--primary);
   transition: width 0.3s ease;
 }
 
@@ -126,7 +126,7 @@
     position: absolute;
     width: 30px;
     height: 3px;
-    background-color: #e2e8f0;
+    background-color: var(--accent);
     transition: all 0.3s ease;
   }
 
@@ -153,7 +153,7 @@
     top: 100%;
     left: 0;
     right: 0;
-    background-color: #0f172a;
+    background-color: var(--background);
     height: 0;
     overflow: hidden;
     transition: height 0.3s ease;

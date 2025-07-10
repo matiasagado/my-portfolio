@@ -1,7 +1,7 @@
 #about {
   align-items: center;
   padding: 1.5rem 2rem;
-  background-color: #0f172a;
+  background-color: var(--background);
   margin: auto;
   max-width: 1000px;
   padding-top: 100px;

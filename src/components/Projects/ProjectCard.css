@@ -75,7 +75,7 @@
 .project-title {
   font-size: 1.25rem;
   font-weight: 600;
-  color: #e2e8f0;
+  color: var(--accent);
   margin-bottom: 0.75rem;
   position: relative;
   display: inline-block;
@@ -88,7 +88,7 @@
   left: 0;
   width: 0;
   height: 2px;
-  background: linear-gradient(90deg, #8b5cf6, #3b82f6);
+  background: linear-gradient(90deg, var(--primary), #3b82f6);
   transition: width 0.3s ease;
 }
 
@@ -121,7 +121,7 @@
 
 .project-card.hovered .tech-tag {
   background-color: #475569;
-  color: #e2e8f0;
+  color: var(--accent);
 }
 
 @media (max-width: 768px) {

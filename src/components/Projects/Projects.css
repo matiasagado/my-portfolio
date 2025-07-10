@@ -36,7 +36,7 @@
   font-weight: 500;
   text-decoration: none;
   background-color: transparent;
-  color: #e2e8f0;
+  color: var(--accent);
   border: 2px solid var(--primary);
   position: relative;
   overflow: hidden;

@@ -6,7 +6,7 @@
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  background-color: #0f172a;
+  background-color: var(--background);
   padding-top: 80px; /* Account for fixed header */
 }
 
@@ -43,8 +43,8 @@
 .hero-name {
   font-size: 4rem;
   font-weight: 700;
-  color: #e2e8f0;
-  background: linear-gradient(90deg, #8b5cf6, #3b82f6, #10b981);
+  color: var(--accent);
+  background: linear-gradient(90deg, var(--primary), #3b82f6, #10b981);
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
@@ -126,7 +126,7 @@
 
 .hero-button.secondary {
   background-color: transparent;
-  color: #e2e8f0;
+  color: var(--accent);
   border: 2px solid var(--primary);
 }
 
