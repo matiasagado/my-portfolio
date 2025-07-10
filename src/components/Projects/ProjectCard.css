@@ -1,0 +1,15 @@
+.project-card {
+  background-color: #1e293b;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.project-card.hovered {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
