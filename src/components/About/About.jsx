@@ -11,7 +11,9 @@ function About() {
     </p>
   );
 
-  const two = (
+  const two = <p>Here are some technologies I've been working with:</p>;
+
+  const three = (
     <p>
       Outside of coursework I am interested in following the developments of
       computing technology.
@@ -28,13 +30,13 @@ function About() {
       <div className="about-content">
         <div className="about-description">
           {one}
-          <p>Here are some technologies I've been working with:</p>
+          {two}
           <ul className="tech-stack">
             {techstack.map((techitem, i) => (
               <li key={i}>{techitem}</li>
             ))}
           </ul>
-          {two}
+          {three}
         </div>
         <img src="./src/assets/tmp/tmp.jpeg" alt="Temporary" />
       </div>

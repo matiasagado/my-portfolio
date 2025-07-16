@@ -3,6 +3,15 @@ import "./Hero.css";
 
 function Hero() {
   const canvasRef = useRef(null);
+
+  const one = (
+    <p>
+      I'm a <b>Software Engineer</b> based in San Francisco. I'm passionate
+      about building large-scale, high-impact products, and constantly exploring
+      new technologies.
+    </p>
+  );
+
   return (
     <section className="hero" id="home">
       <canvas ref={canvasRef} className="hero-canvas"></canvas>
@@ -12,11 +21,7 @@ function Hero() {
           <span className="hero-name">Matias Agado</span>
         </h1>
         <h2 className="hero-subtitle">Software Engineer</h2>
-        <p className="hero-description">
-          I'm a <b>Software Engineer</b> based in San Francisco. I'm passionate
-          about building large-scale, high-impact products, and constantly
-          exploring new technologies.
-        </p>
+        <div className="hero-description">{one}</div>
         <div className="hero-buttons">
           <a href="#projects" className="hero-button primary">
             View My Work
