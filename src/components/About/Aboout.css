@@ -1,0 +1,7 @@
+.about-content img {
+  max-width: 400px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-left: 20px;
+}
