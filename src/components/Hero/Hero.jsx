@@ -20,7 +20,9 @@ function Hero() {
           <span className="hero-greeting">Hello, I'm</span>
           <span className="hero-name">Matias Agado</span>
         </h1>
-        <h2 className="hero-subtitle">Software Engineer</h2>
+        <h2 className="hero-subtitle">
+          Software Engineer &amp; React Developer
+        </h2>
         <div className="hero-description">{one}</div>
         <div className="hero-buttons">
           <a href="#projects" className="hero-button primary">
