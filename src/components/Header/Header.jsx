@@ -1,6 +1,6 @@
 import "./Header.css";
 import GitHubIcon from "@mui/icons-material/GitHub";
-import { useState } from "react";
+import React, { useState } from "react";
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -41,7 +41,7 @@ function Header() {
         </ul>
       </nav>
 
-      <button className="menu-toggle">
+      <button className="menu-toggle" onClick={toggleMenu}>
         <div className="menu-icon"></div>
       </button>
     </header>
