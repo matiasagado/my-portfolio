@@ -77,3 +77,31 @@
   line-height: 1.6;
   margin-bottom: 1.5rem;
 }
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.hero-button {
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-button.primary {
+  background-color: var(--primary);
+  color: var(--accent);
+}
+
+.hero-button.secondary {
+  background-color: transparent;
+  color: var(--accent);
+  border: 2px solid var(--primary);
+}
