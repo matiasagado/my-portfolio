@@ -95,13 +95,42 @@
   overflow: hidden;
 }
 
+.hero-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -104%;
+  height: 100%;
+  width: 100%;
+  background: rgba(225, 255, 255, 0.1);
+  transition: transform 0.5s ease;
+  transform: skewX(-15deg);
+}
+
+.hero-button:hover::before {
+  left: 100%;
+  transform: translateX(100%) skewX(-15deg);
+}
+
 .hero-button.primary {
   background-color: var(--primary);
   color: var(--accent);
+}
+
+.hero-button.primary:hover {
+  background-color: #7c3aed;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(139, 92, 246, 0.2);
 }
 
 .hero-button.secondary {
   background-color: transparent;
   color: var(--accent);
   border: 2px solid var(--primary);
+}
+
+.hero-button.secondary:hover {
+  background-color: transparent;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(139, 92, 246, 0.2);
 }
