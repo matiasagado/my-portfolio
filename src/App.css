@@ -4,3 +4,8 @@
   --primary: #8b5cf6;
   --accent: #e2e8f0;
 }
+
+.App {
+  width: 100%;
+  min-height: 100vh;
+}
