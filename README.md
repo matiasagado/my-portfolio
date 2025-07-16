@@ -5,5 +5,5 @@
   <a href="https://matiasagado.com" target="_blank">matiasagado.com</a>
   <br />
   <br />
-  <img src="public/assets/project1.jpeg" alt="Portfolio Screenshot" width="600px" />
+  <img src="src/assets/projects/portfolio.jpeg" alt="Portfolio Screenshot" width="600px" />
 </div>
