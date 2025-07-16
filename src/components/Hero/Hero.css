@@ -134,3 +134,28 @@
   transform: translateY(-3px);
   box-shadow: 0 6px 20px rgba(139, 92, 246, 0.2);
 }
+
+@media (max-width: 768px) {
+  .hero-name {
+    font-size: 3rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.25rem;
+  }
+
+  .hero-description {
+    font-size: 1rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-button {
+    width: 100%;
+    max-width: 250px;
+    text-align: center;
+  }
+}
