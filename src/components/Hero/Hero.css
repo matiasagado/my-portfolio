@@ -25,3 +25,40 @@
   max-width: 800px;
   padding: 0 2rem;
 }
+
+.hero-title {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.5rem;
+}
+
+.hero-greeting {
+  font-size: 2rem;
+  font-weight: 400;
+  color: var(--slate);
+  margin-bottom: 0.5rem;
+}
+
+.hero-name {
+  font-size: 4.5rem;
+  font-weight: 700;
+  color: var(--accent);
+  background: linear-gradient(90deg, var(--primary), #3b82f6, #10b981);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: gradient 8s ease infinite;
+  background-size: 200% 200%;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
