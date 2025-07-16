@@ -1,11 +1,6 @@
-:root {
-  --slate: #94a3b8;
-  --background: #0f172a;
-  --primary: #8b5cf6;
-  --accent: #e2e8f0;
-}
-
 .App {
   width: 100%;
   min-height: 100vh;
+  text-align: center;
+  background-color: var(--background);
 }

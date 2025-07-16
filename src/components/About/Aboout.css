@@ -1,3 +1,11 @@
+#about {
+  align-items: center;
+  padding: 1.5rem 2rem;
+  background-color: var(--background);
+  margin: auto;
+  max-width: 1000px;
+  padding-top: 100px;
+}
 .about-content img {
   max-width: 400px;
   height: 400px;
