@@ -102,13 +102,6 @@
   -webkit-tap-highlight-color: transparent;
 }
 
-.menu-toggle:focus,
-.menu-toggle:active {
-  outline: none;
-  box-shadow: none;
-  -webkit-tap-highlight-color: transparent;
-}
-
 @media (max-width: 768px) {
   .menu-toggle {
     display: block;
@@ -116,7 +109,7 @@
     height: 30px;
     position: relative;
     outline: none;
-    -webkit-tap-highlight-color: transparent;
+    transition: all 0.3s ease-in-out;
   }
   .menu-icon,
   .menu-icon::before,
@@ -131,6 +124,22 @@
     top: 13px;
   }
 
+  .menu-icon,
+  .menu-icon::before,
+  .menu-icon::after {
+    position: absolute;
+    width: 30px;
+    height: 3px;
+    background-color: var(--accent);
+    transition: all 0.3s ease-in-out;
+  }
+
+  .menu-icon {
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+  }
+
   .menu-icon::after,
   .menu-icon::before {
     content: "";
@@ -143,6 +152,18 @@
 
   .menu-icon::after {
     top: 8px;
+  }
+
+  .menu-toggle.active .menu-icon::before {
+    transform: translateY(8px) rotate(135deg);
+  }
+
+  .menu-toggle.active .menu-icon::after {
+    transform: translateY(-8px) rotate(-135deg);
+  }
+
+  .menu-toggle.active .menu-icon {
+    background: transparent;
   }
 
   .nav {

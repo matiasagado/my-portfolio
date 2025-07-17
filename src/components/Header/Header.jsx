@@ -41,7 +41,10 @@ function Header() {
         </ul>
       </nav>
 
-      <button className="menu-toggle" onClick={toggleMenu}>
+      <button
+        className={`menu-toggle ${isMenuOpen ? "active" : ""}`}
+        onClick={toggleMenu}
+      >
         <div className="menu-icon"></div>
       </button>
     </header>
