@@ -7,6 +7,30 @@
   padding-top: 100px;
 }
 
+.about-content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.about-description {
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: var(--slate);
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.about-description a,
+.about-description b {
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.about-description a {
+  color: var(--primary);
+}
+
 .about-content img {
   max-width: 400px;
   height: 400px;

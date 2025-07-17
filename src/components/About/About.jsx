@@ -7,7 +7,7 @@ function About() {
       I'm currently a <b>Senior</b> at the{" "}
       <a href="https://www.usfca.edu/">University of San Francisco</a>, pursuing
       a <b>Bachelor's of Science</b> in <b>Computer Science</b>. I'm passionate
-      about Software Engineering and always eage to explore new technologies.
+      about Software Engineering and always eager to explore new technologies.
     </p>
   );
 
