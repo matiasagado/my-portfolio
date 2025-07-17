@@ -18,7 +18,7 @@
   color: var(--slate);
   line-height: 1.5;
   margin-bottom: 1.5rem;
-  text-align: left;
+  text-align: justify;
 }
 
 .about-description a,
@@ -31,10 +31,37 @@
   color: var(--primary);
 }
 
+.about-description ul {
+  display: grid;
+  padding: 20px 0px;
+  grid-template-columns: repeat(2, minmax(150px, 10px));
+  list-style-type: none;
+}
+
+.about-description li {
+  padding: 2px;
+  position: relative;
+}
+
 .about-content img {
   max-width: 400px;
   height: 400px;
   object-fit: cover;
   border-radius: 10px;
   margin-left: 20px;
+}
+
+@media (max-width: 768px) {
+  .about-content {
+    flex-direction: column;
+  }
+
+  .about-description {
+    max-width: 100%;
+    margin-bottom: 2rem;
+  }
+
+  .about-content img {
+    margin-left: 10px;
+  }
 }
