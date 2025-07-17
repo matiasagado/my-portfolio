@@ -1,5 +1,5 @@
 import React from "react";
-import "./Aboout.css";
+import "./About.css";
 
 function About() {
   const one = (
