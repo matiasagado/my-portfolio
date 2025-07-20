@@ -17,3 +17,11 @@
   --primary: #8b5cf6;
   --accent: #e2e8f0;
 }
+
+::-webkit-scrollbar-thumb {
+  background: #000000;
+}
+
+* {
+  scrollbar-color: #000000 var(--background);
+}

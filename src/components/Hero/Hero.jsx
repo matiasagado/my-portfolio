@@ -6,9 +6,9 @@ function Hero() {
 
   const one = (
     <p>
-      I'm a <b>Software Engineer</b> based in San Francisco. I'm passionate
-      about building large-scale, high-impact products, and constantly exploring
-      new technologies.
+      I'm a <b>Software Engineer</b> based in San Francisco. I'm fascinated by
+      large-scale, high-impact products, and constantly exploring new
+      technologies.
     </p>
   );
 

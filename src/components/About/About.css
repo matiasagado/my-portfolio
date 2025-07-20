@@ -1,6 +1,5 @@
 #about {
   align-items: center;
-  padding: 1.5rem 2rem;
   background-color: var(--background);
   margin: auto;
   max-width: 1000px;
@@ -13,7 +12,7 @@
 }
 
 .about-description {
-  font-size: 1.15rem;
+  font-size: 1.19rem;
   font-weight: 500;
   color: var(--slate);
   line-height: 1.5;
@@ -44,11 +43,12 @@
 }
 
 .about-content img {
-  max-width: 400px;
-  height: 400px;
+  max-width: 325px;
+  height: 325px;
   object-fit: cover;
   border-radius: 10px;
-  margin-left: 20px;
+  margin-left: 4rem;
+  box-shadow: 6px 13px 23px -5px #00000075;
 }
 
 @media (max-width: 768px) {
