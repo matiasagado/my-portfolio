@@ -5,7 +5,7 @@ function Projects() {
   return (
     <section className="section" id="projects">
       <div className="section-header">
-        <span className="section-title">Pet Projects</span>
+        <span className="section-title">projects_</span>
       </div>
     </section>
   );

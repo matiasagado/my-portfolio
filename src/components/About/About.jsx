@@ -25,7 +25,7 @@ function About() {
   return (
     <section className="section" id="about">
       <div className="section-header">
-        <span className="section-title">About Me</span>
+        <span className="section-title">about me_</span>
       </div>
       <div className="about-content">
         <div className="about-description">
