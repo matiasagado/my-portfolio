@@ -14,11 +14,11 @@
 - [Technologies Used](#Technologies-Used)
 - [Project Structure](#Project-Structure)
 
-## Features
-
 ## Overview
 
 This is my personal website built with React + Vite. View the website to see what I've been working on, along with how to contact me! 
+
+## Features
 
 ## Technologies Used
 
