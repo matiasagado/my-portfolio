@@ -2,6 +2,12 @@ import "./Contact.css";
 import { useState } from "react";
 
 function Contact() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [formError, setFormError] = useState("");
   const [isVisible, setIsVisible] = useState(false);
@@ -81,7 +87,9 @@ function Contact() {
                   placeholder="Your message here..."
                 ></textarea>
               </div>
-              <button className="submit-button" type="submit"></button>
+              <button className="submit-button" type="submit">
+                Send
+              </button>
             </form>
           )}
         </div>
