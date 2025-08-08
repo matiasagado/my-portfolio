@@ -108,6 +108,21 @@ function Contact() {
             question or want to get in touch, I'll try my best to get back to
             you.
           </p>
+          <div className="social-links">
+            {socialLinks.map((link, index) => (
+              <a
+                key={link.name}
+                href={link.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="social-link"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                <i className={link.icon}></i>
+                <span>{link.name}</span>
+              </a>
+            ))}
+          </div>
         </div>
         <div className="contact-form-container">
           {isSubmitted ? (
