@@ -64,13 +64,12 @@ function Contact() {
             user_message: "",
           });
         },
-        (error) => {
-          console.log('FAILED...', error);
-          console.log('Error details:', error.text);
-          setFormError("Failed to send message. Please try again.");
-          setIsSubmitting(false);
-        },
-      );
+      )
+      .catch((err) => {
+        console.error("FAILED...", err);
+        setFormError("Failed to send message. Please try again later.");
+        setIsSubmitting(false);
+      });
     };
 
   const socialLinks = [
@@ -116,7 +115,6 @@ function Contact() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="social-link"
-                style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <i className={link.icon}></i>
                 <span>{link.name}</span>
