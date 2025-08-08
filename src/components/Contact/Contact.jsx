@@ -10,28 +10,39 @@ function Contact() {
   });
 
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formError, setFormError] = useState("");
   const [isVisible, setIsVisible] = useState(false);
-  // TODO: add state for submitted
 
   const form = useRef();
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    console.log('Input changed:', name, value);
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
 
   const sendEmail = (e) => {
     e.preventDefault();
+    console.log('sendEmail called');
+    console.log('formData:', formData);
+    setIsSubmitting(true);
 
     if (!formData.user_name || !formData.user_email || !formData.user_message) {
       setFormError("Please fill in all fields");
+      setIsSubmitting(false);
       return;
     }
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(formData.email)) {
+    if (!emailRegex.test(formData.user_email)) {
       setFormError("Please enter a valid email address");
       setIsSubmitting(false);
       return;
     }
-    // TODO: when submitted successfully reset the form
-    // TODO: on error show the error message
+
     // TODO: when success redirect to a thank you page
 
     const templateParams = {
@@ -47,22 +58,23 @@ function Contact() {
       .then(
         () => {
           console.log('SUCCESS!');
+          setFormError("");
+          setIsSubmitting(false);
+          setIsSubmitted(true);
           setFormData({
             user_name: "",
             user_email: "",
             user_message: "",
           });
-          setFormError("");
         },
         (error) => {
-          console.log('FAILED...', error.text);
+          console.log('FAILED...', error);
+          console.log('Error details:', error.text);
+          setFormError("Failed to send message. Please try again.");
+          setIsSubmitting(false);
         },
       );
     };
-
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
 
   const socialLinks = [
     {
