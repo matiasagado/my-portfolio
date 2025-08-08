@@ -4,32 +4,55 @@ import Reatc, { useState, useRef } from "react";
 
 function Contact() {
   const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
+    user_name: "",
+    user_email: "",
+    user_message: "",
   });
 
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [formError, setFormError] = useState("");
   const [isVisible, setIsVisible] = useState(false);
+  // TODO: add state for submitted
+
   const form = useRef();
 
   const sendEmail = (e) => {
     e.preventDefault();
 
+    // TODO: add form validations
+    // TODO: add email regex validation
+    // TODO: when submitted successfully reset the form
+    // TODO: on error show the error message
+    // TODO: when success redirect to a thank you page
+
+    const templateParams = {
+      user_name: formData.user_name,
+      user_email: formData.user_email,
+      user_message: formData.user_message,
+    };
+
     emailjs
-      .sendForm('service_6kspapd', 'template_9y9xubi', form.current, {
+      .send('service_6kspapd', 'template_9y9xubi', templateParams, {
         publicKey: 'Qsyy2nRt_yavzctv7',
       })
       .then(
         () => {
           console.log('SUCCESS!');
+          setFormData({
+            user_name: "",
+            user_email: "",
+            user_message: "",
+          });
         },
         (error) => {
           console.log('FAILED...', error.text);
         },
       );
     };
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
 
   const socialLinks = [
     {
@@ -85,7 +108,9 @@ function Contact() {
                   type="text"
                   id="user_name"
                   name="user_name"
+                  value={formData.user_name}
                   placeholder="Your Name"
+                  onChange={handleChange}
                 ></input>
               </div>
               <div className="form-group">
@@ -94,7 +119,9 @@ function Contact() {
                   type="text"
                   id="user_email"
                   name="user_email"
+                  value={formData.user_email}
                   placeholder="your.email@example.com"
+                  onChange={handleChange}
                 ></input>
               </div>
               <div className="form-group">
@@ -103,6 +130,8 @@ function Contact() {
                   type="text"
                   id="user_message"
                   name="user_message"
+                  value={formData.user_message}
+                  onChange={handleChange}
                   placeholder="Your message here..."
                 ></textarea>
               </div>
