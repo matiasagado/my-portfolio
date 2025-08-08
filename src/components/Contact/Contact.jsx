@@ -1,5 +1,6 @@
 import "./Contact.css";
-import { useState } from "react";
+import emailjs from '@emailjs/browser';
+import Reatc, { useState, useRef } from "react";
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -11,6 +12,24 @@ function Contact() {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [formError, setFormError] = useState("");
   const [isVisible, setIsVisible] = useState(false);
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm('service_6kspapd', 'template_9y9xubi', form.current, {
+        publicKey: 'Qsyy2nRt_yavzctv7',
+      })
+      .then(
+        () => {
+          console.log('SUCCESS!');
+        },
+        (error) => {
+          console.log('FAILED...', error.text);
+        },
+      );
+    };
 
   const socialLinks = [
     {
@@ -58,14 +77,14 @@ function Contact() {
               </p>
             </div>
           ) : (
-            <form className="contact-form">
+            <form className="contact-form" ref={form}>
               {formError && <div className="form-error">{formError}</div>}
               <div className="form-group">
                 <label htmlfor="name">Name</label>
                 <input
                   type="text"
-                  id="name"
-                  name="name"
+                  id="user_name"
+                  name="user_name"
                   placeholder="Your Name"
                 ></input>
               </div>
@@ -73,8 +92,8 @@ function Contact() {
                 <label htmlfor="email">Email</label>
                 <input
                   type="text"
-                  id="email"
-                  name="email"
+                  id="user_email"
+                  name="user_email"
                   placeholder="your.email@example.com"
                 ></input>
               </div>
@@ -82,12 +101,12 @@ function Contact() {
                 <label htmlfor="message">Message</label>
                 <textarea
                   type="text"
-                  id="message"
-                  name="message"
+                  id="user_message"
+                  name="user_message"
                   placeholder="Your message here..."
                 ></textarea>
               </div>
-              <button className="submit-button" type="submit">
+              <button className="submit-button" type="submit" value="Send" onClick={sendEmail}>
                 Send
               </button>
             </form>
