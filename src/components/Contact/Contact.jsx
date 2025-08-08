@@ -84,11 +84,6 @@ function Contact() {
       url: "https://linkedin.com/in/matiasagado",
     },
     {
-      name: "Twitter",
-      icon: "fab fa-twitter",
-      url: "https://twitter.com/matt_agado",
-    },
-    {
       name: "Email",
       icon: "fas fa-envelope",
       url: "mailto:mfagado@usfca.edu",
