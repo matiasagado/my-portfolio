@@ -24,7 +24,12 @@ function Contact() {
       return;
     }
 
-    // TODO: add email regex validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      setFormError("Please enter a valid email address");
+      setIsSubmitting(false);
+      return;
+    }
     // TODO: when submitted successfully reset the form
     // TODO: on error show the error message
     // TODO: when success redirect to a thank you page
