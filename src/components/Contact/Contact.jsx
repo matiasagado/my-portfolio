@@ -19,7 +19,11 @@ function Contact() {
   const sendEmail = (e) => {
     e.preventDefault();
 
-    // TODO: add form validations
+    if (!formData.user_name || !formData.user_email || !formData.user_message) {
+      setFormError("Please fill in all fields");
+      return;
+    }
+
     // TODO: add email regex validation
     // TODO: when submitted successfully reset the form
     // TODO: on error show the error message
@@ -43,6 +47,7 @@ function Contact() {
             user_email: "",
             user_message: "",
           });
+          setFormError("");
         },
         (error) => {
           console.log('FAILED...', error.text);
