@@ -17,7 +17,6 @@ function Contact() {
   const form = useRef();
   const handleChange = (e) => {
     const { name, value } = e.target;
-    console.log('Input changed:', name, value);
     setFormData((prevData) => ({
       ...prevData,
       [name]: value,
@@ -26,8 +25,6 @@ function Contact() {
 
   const sendEmail = (e) => {
     e.preventDefault();
-    console.log('sendEmail called');
-    console.log('formData:', formData);
     setIsSubmitting(true);
 
     if (!formData.user_name || !formData.user_email || !formData.user_message) {
