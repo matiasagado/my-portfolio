@@ -1,6 +1,6 @@
 import "./Contact.css";
 import emailjs from '@emailjs/browser';
-import Reatc, { useState, useRef } from "react";
+import React, { useState, useRef } from "react";
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -82,11 +82,6 @@ function Contact() {
       name: "LinkedIn",
       icon: "fab fa-linkedin",
       url: "https://linkedin.com/in/matiasagado",
-    },
-    {
-      name: "Email",
-      icon: "fas fa-envelope",
-      url: "mailto:mfagado@usfca.edu",
     },
   ];
   return (

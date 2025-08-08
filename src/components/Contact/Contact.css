@@ -69,4 +69,17 @@
       transform: translateX(0);
     }
   }
+
+  .social-link:hover {
+    background-color: var(--primary);
+    color: white;
+    transform: translateY(-3px);
+  }
+
+  .social-link i {
+    font-size: 1.25rem;
+    margin-right: 1rem;
+    width: 20px;
+    text-align: center;
+  }
   
